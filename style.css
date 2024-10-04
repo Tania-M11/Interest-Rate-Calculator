@@ -2,16 +2,7 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
   background-color: #fff;
-  .background-custom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh; /* Asegura que cubra toda la pantalla y crezca con el contenido */
-    z-index: -10;
-    background-color: white;
-    background: radial-gradient(125% 70% at 50% 10%, #fff 40%, rgb(156, 129, 231) 100%);
-  }
+
 }
 
 *,
