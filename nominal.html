@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html data-lt-installed="true">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Calculadora de Tasas Nominales</title>
+    <link rel="icon" type="image" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="background-custom">
+    <h1>Tasas de interés</h1>
+
+    <section class="all">
+      <article class="nominal-to-nominal">
+        <h2>Tasas Nominal a otra Tasa Nominal</h2>
+        <form id="conversionForm" class="conversionForm">
+          <label for="inputPercentage">Tasa de interes:</label>
+          <input type="number" id="inputPercentage" step="0.01" required="" />
+          <label for="inputPeriod">Periodo de tasa nominal:</label>
+          <select id="inputPeriod">
+            <option value="mensual">Mensual</option>
+            <option value="bimestral">Bimestral</option>
+            <option value="trimestral">Trimestral</option>
+            <option value="cuatrimestral">Cuatrimestral</option>
+            <option value="semestral">Semestral</option>
+            <option value="anual">Anual</option>
+          </select>
+          <label for="outputPeriod">Convertir a:</label>
+          <select id="outputPeriod">
+            <option value="mensual">Mensual</option>
+            <option value="bimestral">Bimestral</option>
+            <option value="trimestral">Trimestral</option>
+            <option value="cuatrimestral">Cuatrimestral</option>
+            <option value="semestral">Semestral</option>
+            <option value="anual">Anual</option>
+          </select>
+          <button class="button" type="button" onclick="convertRates()">
+            <span class="button-content">Calcular</span>
+          </button>
+        </form>
+        <p id="result"></p>
+      </article>
+
+      <!-- sección 2 -->
+      <article>
+        <form id="nominalToEffectiveForm">
+          <h2>Tasa Nominal a Efectiva</h2>
+          <label for="inputNominalRate">Tasa Nominal (%):</label>
+          <input type="number" id="inputNominalRate" step="0.01" required="" />
+          <label for="inputPeriodDays">Días del periodo de tasa nominal:</label>
+          <input type="number" id="inputPeriodDays" required="" />
+          <label for="inputCapitalizationDays"
+            >Días del periodo de capitalización:</label
+          >
+          <input type="number" id="inputCapitalizationDays" required="" />
+          <label for="inputRequestedDays">Días del periodo solicitado:</label>
+          <input type="number" id="inputRequestedDays" required="" />
+          <button
+            class="button"
+            type="button"
+            onclick="convertNominalToEffective()"
+          >
+            <span class="button-content">Calcular</span>
+          </button>
+        </form>
+        <p id="effectiveResult"></p>
+      </article>
+
+      <!-- seccion 3 -->
+      <article>
+        <form id="effectiveToEffectiveForm">
+          <h2>Tasa Efectiva a Otra Tasa Efectiva</h2>
+          <label for="inputInterestRate2">Tasa de interés (%):</label>
+          <input
+            type="number"
+            id="inputInterestRate2"
+            step="0.01"
+            required=""
+          />
+          <label for="inputRequestedDays2"
+            >Días de la tasa efectiva solicitada:</label
+          >
+          <input type="number" id="inputRequestedDays2" required="" />
+          <label for="inputGivenDays">Días de la tasa efectiva dada:</label>
+          <input type="number" id="inputGivenDays" required="" />
+          <button
+            class="button"
+            type="button"
+            onclick="convertEffectiveToEffective()"
+          >
+            <span class="button-content">Calcular</span>
+          </button>
+        </form>
+        <p id="effectiveEffectiveResult"></p>
+      </article>
+
+      <!-- sección 4 -->
+      <article>
+        <form id="effectiveToNominalForm">
+          <h2>Tasa Efectiva a Tasa Nominal</h2>
+          <label for="inputEffectiveRate3">Tasa Efectiva (%):</label>
+          <input
+            type="number"
+            id="inputEffectiveRate3"
+            step="0.01"
+            required=""
+          />
+          <label for="inputNominalDays3">Días de la tasa nominal:</label>
+          <input type="number" id="inputNominalDays3" required="" />
+          <label for="inputCapitalizationDays3"
+            >Días del periodo de capitalización:</label
+          >
+          <input type="number" id="inputCapitalizationDays3" required="" />
+          <label for="inputEffectiveDays"
+            >Días del periodo de la tasa efectiva:</label
+          >
+          <input type="number" id="inputEffectiveDays" required="" />
+          <button
+            class="button"
+            type="button"
+            onclick="convertEffectiveToNominal()"
+          >
+            <span class="button-content">Calcular</span>
+          </button>
+        </form>
+        <p id="nominalResult"></p>
+      </article>
+    </section>
+
+    <script src="./Calculadora de Tasas Nominales_files/script.js.download"></script>
+  </body>
+</html>
